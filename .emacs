@@ -1,6 +1,6 @@
-
 ;;--------------------
 ;普通设置
+(set-default-font "Share-TechMono-11");默认字体
 (setq inhibit-startup-message t);关闭启动信息
 (setq make-backup-files nil);不产生备份文件
 (fset 'yes-or-no-p 'y-or-n-p);以 y/n代表 yes/no
@@ -15,25 +15,12 @@
 (setq frame-title-format "%b@%f");在标题栏显示文件名称
 (setq default-fill-column 80);默认显示 80列就换行
 (blink-cursor-mode nil);禁止光标闪烁
+(setq ring-bell-function 'ignore);禁止警告音
 (ido-mode t);配置ido
+(icomplete-mode t)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-;;--------------------\
-
-
-;;--------------------
-;el-get安装的扩展
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require 'el-get)
-;autopair
-(add-to-list 'load-path "~/.emacs.d/el-get/autopair")
-(require 'autopair)
-(autopair-global-mode)
-;color-theme & color-theme-chocolate-rain
-(add-to-list 'load-path "~/.emacs.d/el-get/color-theme")
-(load-file "~/.emacs.d/el-get/color-theme-chocolate-rain/color-theme-chocolate-rain.elc")
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-chocolate-rain)
+(put 'scroll-left 'disabled nil);允许屏幕左移
+(global-set-key (kbd "C-x C-j") 'align);变量自动对齐
 ;;--------------------\
 
 
