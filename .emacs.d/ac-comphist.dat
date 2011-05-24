@@ -1,0 +1,24 @@
+((("auto-complete" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("kbd" .
+   [1 0 0])
+  ("global-set-key" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("int" .
+   [3 0 6])
+  ("inline" .
+   [0 1 0 0 0 0])
+  ("gnus-jog-cache" .
+   [0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("global-linum-mode" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("global-subword-mode" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("global-semantic-idle-local-symbol-highlight-mode" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("load-path" .
+   [0 0 0 0 0 0 0 0 1])
+  ("require" .
+   [0 0 0 0 0 1 0])
+  ("Yasnippet" .
+   [0 0 0 1 0 0 0 0 0])))
