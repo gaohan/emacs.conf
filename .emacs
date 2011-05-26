@@ -1,6 +1,6 @@
 ;;--------------------
 ;普通设置
-(set-default-font "Share-TechMono-11");默认字体
+(set-default-font "Envy Code R-11");默认字体
 (setq inhibit-startup-message t);关闭启动信息
 (setq make-backup-files nil);不产生备份文件
 (fset 'yes-or-no-p 'y-or-n-p);以 y/n代表 yes/no
@@ -8,7 +8,7 @@
 (size-indication-mode t);显示文件大小
 (global-linum-mode t);显示行号
 (show-paren-mode t);显示括号匹配
-(setq show-paren-style 'mixed)
+(setq show-paren-style 'parenthesis)
 (tool-bar-mode nil);去掉工具栏
 (scroll-bar-mode nil);去掉滚动条
 (mouse-avoidance-mode 'jump);光标靠近鼠标指针时，让鼠标指针自动让开
@@ -46,7 +46,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-sanityinc-solarized-dark)
+(color-theme-kuler)
 ;CEDET
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet/common")
 (require 'cedet)
@@ -57,7 +57,7 @@
 (semantic-load-enable-code-helpers)
 ;(semantic-load-enable-guady-code-helpers)
 ;(semantic-load-enable-excessive-code-helpers)
-(semantic-load-enable-semantic-debugging-helpers)
+;(semantic-load-enable-semantic-debugging-helpers)
 ;; (setq semanticdb-project-roots (list (expand-file-name "/")))
 (defconst cedet-user-include-dirs
   (list ".." "../include" "../inc" "../common" "../public"

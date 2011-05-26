@@ -98,7 +98,7 @@
          (font-lock-doc-face ((t (:foreground ,magenta))))
          (font-lock-doc-string-face ((t (:foreground ,yellow))))
          (font-lock-function-name-face ((t (:foreground ,blue))))
-         (font-lock-keyword-face ((t (:foreground ,green :bold t))))
+         (font-lock-keyword-face ((t (:foreground ,green))))
          (font-lock-negation-char-face ((t (:foreground ,green))))
          (font-lock-preprocessor-face ((t (:foreground ,magenta))))
          (font-lock-regexp-grouping-backslash ((t (:foreground ,magenta))))
@@ -106,7 +106,7 @@
          (font-lock-string-face ((t (:foreground ,cyan))))
          (font-lock-type-face ((t (:foreground ,yellow))))
          (font-lock-variable-name-face ((t (:foreground ,yellow))))
-         (font-lock-warning-face ((t (:bold t :foreground ,red))))
+         (font-lock-warning-face ((t (:foreground ,red :background ,faint))))
          (shadow ((t (:foreground ,(fourth foregrounds)))))
 
          ;; Flymake
@@ -130,7 +130,8 @@
          (isearch-fail ((t (:background nil :inherit font-lock-warning-face :inverse-video t))))
 
          ;; IDO
-         (ido-subdir ((t (:foreground ,magenta))))
+ fg
+hgfdfgdfgweroqiweuo4u321       (ido-subdir ((t (:foreground ,magenta))))
          (ido-first-match ((t (:foreground ,yellow))))
          (ido-only-match ((t (:foreground ,green))))
 
@@ -140,15 +141,14 @@
          (border-glyph ((t (nil))))
          (highlight ((t (:inverse-video nil :background ,alt-background))))
          (gui-element ((t (:background ,alt-background :foreground ,normal))))
-         (mode-line ((t (:foreground nil :background ,alt-background :bold t
-                                     :box (:line-width 1 :color ,normal)))))
+         (mode-line ((t (:foreground nil :background ,alt-background :box (:line-width 1 :color ,normal)))))
          (mode-line-buffer-id ((t (:foreground ,magenta :background nil))))
          (mode-line-inactive ((t (:inherit mode-line
                                            :foreground ,faintest
                                            :background ,alt-background :weight normal
                                            :box (:line-width 1 :color ,normal)))))
          (mode-line-emphasis ((t (:foreground ,strong))))
-         (mode-line-highlight ((t (:foreground ,magenta :box nil :weight bold))))
+         (mode-line-highlight ((t (:foreground ,magenta :box (:line-width 1)))))
          (minibuffer-prompt ((t (:foreground ,blue))))
          (region ((t (:background ,contrast-background))))
          (secondary-selection ((t (:background ,alt-background))))
@@ -190,7 +190,7 @@
 
          (org-document-title ((t (:foreground ,cyan))))
          (org-column ((t (:background ,alt-background))))
-         (org-warning ((t (:bold t :foreground ,red))))
+         (org-warning ((t (:foreground ,red :background ,faint))))
 
          (org-scheduled-previously ((t (:foreground ,orange))))
 
@@ -211,8 +211,8 @@
          (gnus-cite-8 ((t (:inherit outline-8 :foreground nil))))
          ;; there are several more -cite- faces...
          (gnus-header-content ((t (:inherit header-line :foreground nil :background nil :bold nil))))
-         (gnus-header-subject ((t (:inherit gnus-header-content :bold t :foreground ,yellow))))
-         (gnus-header-from ((t (:inherit gnus-header-content :bold t :foreground ,orange))))
+         (gnus-header-subject ((t (:inherit gnus-header-content :foreground ,yellow))))
+         (gnus-header-from ((t (:inherit gnus-header-content :foreground ,orange))))
          (gnus-header-name ((t (:inherit header-line :foreground ,green :background nil))))
          (gnus-button ((t (:inherit link :foreground nil))))
          (gnus-signature ((t (:inherit font-lock-comment-face))))
