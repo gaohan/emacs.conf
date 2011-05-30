@@ -1,8 +1,9 @@
 ;;--------------------
 ;普通设置
-(set-default-font "Envy Code R-11");默认字体
+(set-default-font "Telegrama-10");默认字体
+(setq make-backup-files nil);禁止备份
 (setq inhibit-startup-message t);关闭启动信息
-(setq make-backup-files nil);不产生备份文件
+(setq initial-scratch-message "");scratch为空
 (fset 'yes-or-no-p 'y-or-n-p);以 y/n代表 yes/no
 (column-number-mode t);显示列号
 (size-indication-mode t);显示文件大小
@@ -11,10 +12,8 @@
 (setq show-paren-style 'parenthesis)
 (tool-bar-mode nil);去掉工具栏
 (scroll-bar-mode nil);去掉滚动条
-(mouse-avoidance-mode 'jump);光标靠近鼠标指针时，让鼠标指针自动让开
 (setq frame-title-format "%b@%f");在标题栏显示文件名称
 (setq default-fill-column 80);默认显示 80列就换行
-(blink-cursor-mode nil);禁止光标闪烁
 (setq ring-bell-function 'ignore);禁止警告音
 (ido-mode t);配置ido
 (icomplete-mode t)
@@ -30,6 +29,14 @@
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
 (add-hook 'sh-mode-hook 'hs-minor-mode)
 (setq gdb-many-windows t);gdb多窗口
+(desktop-save-mode t);会话保存
+(recentf-mode t);允许打开最近文件
+(setq-default major-mode 'org-mode);默认模式
+(setq mouse-yank-at-point t);光标处粘贴
+(blink-cursor-mode nil);禁止光标闪烁
+(setq x-stretch-cursor t);光标在TAB字符上显示为大方块
+(setq void-text-area-pointer nil);禁止显示箭头指针
+(mouse-avoidance-mode 'banish);鼠标自动闪开
 (require 'xcscope);cscope独立软件
 ;;--------------------\
 
@@ -87,7 +94,9 @@
 (global-set-key (kbd "C-c \]") 'semantic-tag-folding-show-all)
 ;ECB
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb")
-(require 'ecb)
+(require 'ecb-autoloads)
+(setq ecb-tip-of-the-day nil)
+(custom-set-variables '(ecb-options-version "2.40"))
 ;Auto Complete
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
 (require 'auto-complete-config)
