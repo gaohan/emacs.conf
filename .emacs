@@ -96,6 +96,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb")
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil)
+(setq ecb-tree-buffer-style 'ascii-guides)
 (custom-set-variables '(ecb-options-version "2.40"))
 ;Auto Complete
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
@@ -109,3 +110,10 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/lisp/yasnippet/snippets")
 ;;--------------------\
+
+
+
+
+
+
+
