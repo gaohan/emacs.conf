@@ -458,10 +458,10 @@
   (add-to-list 'ac-sources 'ac-source-filename))
 
 (defun ac-emacs-lisp-mode-setup ()
-  (setq ac-sources (append '(ac-source-features ac-source-functions ac-source-yasnippet ac-source-variables ac-source-symbols) ac-sources)))
+  (setq ac-sources (append '(ac-source-features ac-source-functions ac-source-yasnippet ac-source-variables ac-source-symbols ac-source-semantic) ac-sources)))
 
 (defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet ac-source-gtags ac-source-semantic) ac-sources)))
 
 (defun ac-ruby-mode-setup ()
   (make-local-variable 'ac-ignores)
@@ -481,3 +481,4 @@
 
 (provide 'auto-complete-config)
 ;;; auto-complete-config.el ends here
+

@@ -85,7 +85,6 @@
           (semantic-add-system-include dir 'c-mode))
         include-dirs))
 (global-set-key [f12] 'semantic-ia-fast-jump);跳转到函数定义
-(global-set-key (kbd "M-n") 'semantic-ia-complete-symbol-menu);代码补全
 (global-semantic-tag-folding-mode 1);代码折叠
 (global-set-key (kbd "C-c \\") 'global-semantic-tag-folding-mode)
 (global-set-key (kbd "C-c , \[") 'semantic-tag-folding-fold-block)
@@ -101,19 +100,14 @@
 ;Auto Complete
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
 (require 'auto-complete-config)
+(require 'auto-complete-clang)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete/ac-dict")
 (ac-config-default)
-(global-set-key (kbd "M-?") 'auto-complete)
+(global-set-key (kbd "M-/") 'auto-complete)
 ;Yasnippet
 (add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/lisp/yasnippet/snippets")
+(setq yas/prompt-functions '(yas/dropdown-prompt))
 ;;--------------------\
-
-
-
-
-
-
-
