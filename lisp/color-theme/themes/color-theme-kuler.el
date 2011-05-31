@@ -47,4 +47,5 @@
      (tooltip ((t (:family "Telegrama" :background "#5b6b2b" :foreground "#000000"))))
      (linum ((t (:background "#010712" :foreground "#474338"))))
      (ecb-default-highlight-face ((t (:background "#632a56" :foreground "#d1d1bc"))))
+     (yas/field-highlight-face ((t (:background "#663f1b" :foreground "#010712"))))
      )))
