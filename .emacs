@@ -38,6 +38,14 @@
 (setq void-text-area-pointer nil);禁止显示箭头指针
 (mouse-avoidance-mode 'banish);鼠标自动闪开
 (require 'xcscope);cscope独立软件
+;; cedet
+(setq semantic-default-submodes '(global-semanticdb-minor-mode
+				  global-semantic-idle-scheduler-mode
+				  global-semantic-idle-summary-mode
+				  global-semantic-mru-bookmark-mode))
+(semantic-mode 1)
+(global-semantic-show-parser-state-mode 1)
+(global-ede-mode t)
 ;;--------------------\
 
 
@@ -54,56 +62,6 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-kuler)
-;CEDET
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet/common")
-(require 'cedet)
-(require 'semantic-ia)
-(global-ede-mode 1)
-(global-srecode-minor-mode 1)
-;(semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers)
-;(semantic-load-enable-guady-code-helpers)
-;(semantic-load-enable-excessive-code-helpers)
-;(semantic-load-enable-semantic-debugging-helpers)
-;; (setq semanticdb-project-roots (list (expand-file-name "/")))
-(defconst cedet-user-include-dirs
-  (list ".." "../include" "../inc" "../common" "../public"
-        "../.." "../../include" "../../inc" "../../common" "../../public"))
-(defconst cedet-win32-include-dirs
-  (list "C:/MinGW/include"
-        "C:/MinGW/include/c++/3.4.5"
-        "C:/MinGW/include/c++/3.4.5/mingw32"
-        "C:/MinGW/include/c++/3.4.5/backward"
-        "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
-        "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
-(require 'semantic-c nil 'noerror)
-(let ((include-dirs cedet-user-include-dirs))
-  (when (eq system-type 'windows-nt)
-    (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
-  (mapc (lambda (dir)
-          (semantic-add-system-include dir 'c++-mode)
-          (semantic-add-system-include dir 'c-mode))
-        include-dirs))
-(global-set-key [f12] 'semantic-ia-fast-jump);跳转到函数定义
-(global-semantic-tag-folding-mode 1);代码折叠
-(global-set-key (kbd "C-c \\") 'global-semantic-tag-folding-mode)
-(global-set-key (kbd "C-c , \[") 'semantic-tag-folding-fold-block)
-(global-set-key (kbd "C-c , \]") 'semantic-tag-folding-show-block)
-(global-set-key (kbd "C-c \[") 'semantic-tag-folding-fold-all)
-(global-set-key (kbd "C-c \]") 'semantic-tag-folding-show-all)
-;ECB
-(add-to-list 'load-path "~/.emacs.d/lisp/ecb")
-(require 'ecb-autoloads)
-(setq ecb-tip-of-the-day nil)
-(setq ecb-tree-buffer-style 'ascii-guides)
-(custom-set-variables '(ecb-options-version "2.40"))
-;Auto Complete
-(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
-(require 'auto-complete-config)
-(require 'auto-complete-clang)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete/ac-dict")
-(ac-config-default)
-(global-set-key (kbd "M-/") 'auto-complete)
 ;Yasnippet
 (add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
 (require 'yasnippet)
