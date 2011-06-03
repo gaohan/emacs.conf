@@ -70,7 +70,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-kuler)
+(color-theme-solarized-dark)
 ;Auto Complete
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
 (require 'auto-complete-clang)
@@ -83,5 +83,5 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/lisp/yasnippet/snippets")
-(setq yas/prompt-functions '(yas/ido-prompt))
+(setq yas/prompt-functions '(yas/dropdown-prompt))
 ;;--------------------\
