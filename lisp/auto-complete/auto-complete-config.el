@@ -461,7 +461,7 @@
   (setq ac-sources (append '(ac-source-semantic ac-source-features ac-source-functions ac-source-yasnippet ac-source-variables ac-source-symbols) ac-sources)))
 
 (defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang-complete ac-source-yasnippet ac-source-gtags) ac-sources)))
+  (setq ac-sources (append '(ac-source-clang-complete ac-source-gtags ac-source-yasnippet) ac-sources)))
 
 (defun ac-ruby-mode-setup ()
   (make-local-variable 'ac-ignores)

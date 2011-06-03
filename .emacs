@@ -38,7 +38,6 @@
 (setq x-stretch-cursor t);光标在TAB字符上显示为大方块
 (setq void-text-area-pointer nil);禁止显示箭头指针
 (mouse-avoidance-mode 'banish);鼠标自动闪开
-(require 'xcscope);cscope独立软件
 ;; cedet
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 				  global-semantic-idle-scheduler-mode
@@ -47,6 +46,15 @@
 (semantic-mode 1)
 (global-semantic-show-parser-state-mode 1)
 (global-ede-mode t)
+;;--------------------\
+
+
+;;--------------------
+;独立软件
+(require 'git);Git
+(require 'xcscope);cscope
+(require 'gtags);Global gtags
+(add-hook 'c-mode-common-hook 'gtags-mode)
 ;;--------------------\
 
 
@@ -75,5 +83,5 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/lisp/yasnippet/snippets")
-(setq yas/prompt-functions '(yas/dropdown-prompt))
+(setq yas/prompt-functions '(yas/ido-prompt))
 ;;--------------------\
