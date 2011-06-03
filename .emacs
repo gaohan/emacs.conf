@@ -2,6 +2,7 @@
 ;普通设置
 (set-default-font "Telegrama-10");默认字体
 (setq make-backup-files nil);禁止备份
+(setq auto-save-default nil);禁止自动保存
 (setq inhibit-startup-message t);关闭启动信息
 (setq initial-scratch-message "");scratch为空
 (fset 'yes-or-no-p 'y-or-n-p);以 y/n代表 yes/no
@@ -38,20 +39,6 @@
 (setq void-text-area-pointer nil);禁止显示箭头指针
 (mouse-avoidance-mode 'banish);鼠标自动闪开
 (require 'xcscope);cscope独立软件
-;hippie-expand
-(setq hippie-expand-try-functions-list
-      '(try-expand-dabbrev
-	try-expand-dabbrev-visible
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-file-name-partially
-	try-complete-file-name
-	try-expand-all-abbrevs
-	try-expand-list
-	try-expand-line
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol))
-(global-set-key "\M-/" 'hippie-expand) 
 ;; cedet
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 				  global-semantic-idle-scheduler-mode
@@ -76,6 +63,13 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-kuler)
+;Auto Complete
+(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
+(require 'auto-complete-clang)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete/ac-dict")
+(ac-config-default)
+(define-key ac-mode-map (kbd "M-/") 'auto-complete)
 ;Yasnippet
 (add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
 (require 'yasnippet)
