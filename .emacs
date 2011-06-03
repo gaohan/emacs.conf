@@ -38,6 +38,20 @@
 (setq void-text-area-pointer nil);禁止显示箭头指针
 (mouse-avoidance-mode 'banish);鼠标自动闪开
 (require 'xcscope);cscope独立软件
+;hippie-expand
+(setq hippie-expand-try-functions-list
+      '(try-expand-dabbrev
+	try-expand-dabbrev-visible
+	try-expand-dabbrev-all-buffers
+	try-expand-dabbrev-from-kill
+	try-complete-file-name-partially
+	try-complete-file-name
+	try-expand-all-abbrevs
+	try-expand-list
+	try-expand-line
+	try-complete-lisp-symbol-partially
+	try-complete-lisp-symbol))
+(global-set-key "\M-/" 'hippie-expand) 
 ;; cedet
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 				  global-semantic-idle-scheduler-mode
