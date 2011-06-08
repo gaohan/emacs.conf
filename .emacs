@@ -84,4 +84,9 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/lisp/yasnippet/snippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt))
+;Shell Pop
+(add-to-list 'load-path "~/.emacs.d/lisp/misc")
+(require 'shell-pop)
+(global-set-key [f8] 'shell-pop)
+(shell-pop-set-internal-mode "eshell")
 ;;--------------------\

@@ -1,6 +1,6 @@
 (defconst netbsd-knf-style
   '(
-   ;; (c-auto-newline . nil)
+   ;; (c-auto-newline . t)
    ;; default indentation level
    (c-basic-offset . 8)
    ;; in which column to add backslashes when macroizing a region
